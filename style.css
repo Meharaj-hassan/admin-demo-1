@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --color-primary:#7380ec;
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132, 139, 200, 0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-background:#f6f6f9;
+
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    --card-padding:1.8rem;
+    --padding-1:1.2rem;
+
+    --box-shadow:0 2rem 3rem  var(--color-light);
+}
+.warning{
+    color: #ffbb55!important;
+}
+.primary{
+    color: #7380ec!important;
+}
+.danger{
+    color: #ff7782!important;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    appearance: none;
+    list-style: none;
+    border: 0;
+    outline: 0;
+}
+html{
+    font-size: 14px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size:0.88rem;
+    background-color: var(--color-background) !important;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+a{
+    color: var(--color-dark) !important;
+}
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.4rem;
+}
+h3{
+    font-size: 0.87rem;
+}
+h4{
+    font-size: 0.8rem;
+}
+h5{
+    font-size: 0.77rem;
+}
+small{
+    font-size: 0.74rem;
+}
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text-muted{
+    color: var(--color-info-dark);
+}
+p{
+    color: var(--color-dark-variant);
+}
+b{
+    color: var(--color-dark);
+}
+
+
+/* start here  */
+
+.container{
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: 15rem auto 23rem;
+    margin: 0 auto;
+    width: 96%;
+}
+aside{
+    height: 100vh;
+}
+aside .top{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+aside .logo{
+    display: flex;
+    gap: 0.8rem;
+}
+aside .logo img{
+    width: 2rem;
+    height: 2rem;
+
+}
+aside .close{
+    display: none;
+}
+
+/* ======= side bar ====== */
+
+aside .sidebar{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    top: 3rem;
+}
+aside .sidebar h3{
+    font-weight:500;
+    font-size: 1.2rem;
+}
+aside .sidebar span{
+    font-size: 1.6rem;
+}
+aside .sidebar a{
+    display: flex;
+    flex-direction: row;
+    color: var(--color-info-dark)!important;
+    margin-left: 1.8rem;
+    gap: .5rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    justify-content: baseline;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+aside .sidebar a.active{
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+aside .sidebar a.active:before{
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem -3px);
+}
+aside .sidebar a:hover{
+    color: var(--color-primary)!important;
+}
+aside .sidebar a span{
+    transition: all 300ms ease;
+}
+aside .sidebar a:hover span{
+    margin-left: 1rem;
+}
+aside .sidebar .message{    background-color: var(--color-danger);
+    padding: .5px 7px;
+    border-radius: 5px;
+    font-size: .8rem;
+    color: white;
+}
+/* ===========Main=========== */
+
+main{
+    margin-top: 1.4rem;
+    width: 100%;
+}
+main .date{
+    display: inline-block;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 0.5rem;
+}
+main .date input[type="date"]{
+    background-color: transparent;
+    color: var(--color-dark);
+}
+main .insights{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.6rem;
+}
+main .insights > div{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow:var(--box-shadow);
+    transition: all .5s ease;
+}
+main .insights > div:hover{
+    box-shadow: none;
+}
+main .insights > div span{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: .5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+main .insights > div.expences span{
+    background-color: var(--color-danger);
+}
+main .insights > div.income span{
+    background-color: var(--color-success);
+}
+main .insights >div .middle{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+main .insights svg{
+    height: 7rem;
+    width: 7rem;
+}
+main .insights svg circle{
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(7px,7px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+main .insights .sales svg circle{
+    stroke-dasharray: 490;
+    stroke-dashoffset: 300;
+}
+
+main .insights .expences svg circle{
+    stroke-dasharray: -60;
+    stroke-dashoffset: 30;
+}
+main .insights .income svg circle{
+    stroke-dasharray: -30;
+    stroke-dashoffset: 300;
+}
+main .insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+main .insights .progress .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .insights small{
+    display: block;
+    margin-top: 1.2rem;
+}
+/* recent order  */
+main .recent-orders{
+    margin-top: 3rem;
+}
+main .recent-orders h2{
+    margin-bottom: 1rem;
+}
+main .recent-orders table{
+    background-color: var(--color-white);
+    padding:var(--card-padding);
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all .5s ease;
+}
+main .recent-orders table td{
+    height: 2rem;
+    border-bottom:1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+main .recent-orders table tbody tr:last-child td{
+    border: none;
+}
+main a{
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+    color: var(--color-primary)!important;
+}
+/* right top */
+
+.right{
+    margin-top: 1rem;
+}
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+.right .top button{
+    display: none;
+}
+.right .top .theme-toggler{
+    display: flex;
+    background-color: var(--color-light);
+    width: 4.2rem;
+    height: 1.6rem;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+.right .top .theme-toggler span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-size: 1.2rem;
+}
+.right .top .theme-toggler span.active{
+    color: white;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-1);
+}
+.right .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/* recent updates */
+.right .recent-update{
+    margin-top: 1rem;
+}
+.right .recent-update h2{
+    margin-bottom: 0.8rem;
+}
+.right .recent-update .updates{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all .5s ease;
+}
+.right .recent-update .updates:hover{
+    box-shadow: none;
+}
+.right .recent-update .updates .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
